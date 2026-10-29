@@ -81,6 +81,11 @@ class Settings:
         default_factory=lambda: int(os.getenv("CHUNK_OVERLAP", "64"))
     )
     top_k: int = field(default_factory=lambda: int(os.getenv("TOP_K", "5")))
+    # Minimum cosine similarity for a retrieval to count as evidence.
+    # Provisional value; calibrate on real data before evaluation.
+    min_score: float = field(
+        default_factory=lambda: float(os.getenv("MIN_SCORE", "0.40"))
+    )
 
     # App --------------------------------------------------------------------
     supported_languages: tuple[str, ...] = field(
@@ -106,6 +111,7 @@ class Settings:
             "chunk_size": self.chunk_size,
             "chunk_overlap": self.chunk_overlap,
             "top_k": self.top_k,
+            "min_score": self.min_score,
             "supported_languages": self.supported_languages,
             "seed": self.seed,
             "hf_token": "***set***" if self.hf_token else "***missing***",

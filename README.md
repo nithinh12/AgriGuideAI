@@ -10,10 +10,28 @@ Academic mini-project — CS3235 (CIE3 Lab Assessment). Individual project.
 
 ## Status
 
-**Scaffold phase (2026-10-29).** The application is not yet functional.
-Verified model compatibility is documented in
-[`docs/model_selection.md`](docs/model_selection.md). Nothing is claimed to
-work until it has been implemented and tested.
+**Milestone 1 complete (2026-10-29)** — working end-to-end core: document
+ingestion → cleaning/chunking → multilingual embeddings → FAISS retrieval →
+grounded answer pipeline with an abstention gate and source citations.
+
+- **Knowledge base**: 3 verified official documents (~938 pages → 977 chunks):
+  TNAU/Directorate-of-Agriculture *Crop Production Guide — Agriculture 2020*
+  and *— Horticulture Crops 2020*, plus the Government of India *Crop-Specific
+  SOP for Drone Pesticide Application 2023* (provenance in
+  `data/raw/sources.jsonl`).
+- **Embeddings**: `intfloat/multilingual-e5-small` (MIT, 384-dim, CPU),
+  verified for en/hi/kn by measured probe similarities (see
+  `tests/test_embeddings_multilingual.py`).
+- **Tests**: 47/47 passing (`pytest`, 2026-10-29), covering PDF extraction,
+  chunking, retrieval/gating, provenance, abstention, and multilingual probes.
+- **Answer generation** is currently *extractive* (quotes retrieved evidence,
+  labeled `extractive_evidence`) — **BharatGen AgriParam integration is
+  Phase 6** (deferred by decision; not yet downloaded).
+- **Known limitations** (honest status): the cosine-score gate cannot yet
+  abstain on *topically adjacent but irrelevant* questions (e.g. export
+  certification queries hit horticulture text at ~0.84); Kannada
+  relevant-vs-distractor margin is narrower (0.089) than en/hi (~0.144).
+  Both are Phase-6/8 calibration items.
 
 ## Design goals
 
@@ -59,8 +77,10 @@ AgriGuideAI/
 3. Copy `.env.example` to `.env` and fill in values. An Hugging Face token
    (`HF_TOKEN`) is required for the **gated** IndicTrans2 checkpoints
    (auto-approve license on their model pages).
-4. *(upcoming)* Build the FAISS index over `data/raw/`, then
-   `streamlit run app/streamlit_app.py`.
+4. Build the index over `data/raw/`:
+   `python -m src.build_index` (~3.5 min on CPU for the current KB; writes
+   `data/processed/` artifacts).
+5. *(upcoming Phase 7)* `streamlit run app/streamlit_app.py`.
 
 ## Key documents
 

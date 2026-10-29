@@ -19,9 +19,8 @@ PyYAML==6.0.3
 rich==15.0.0
 huggingface_hub==2.3.0
 
-# Testing — NOT yet installed as of 2026-10-29.
-# Install with: pip install "pytest>=8.3,<9.0"
-pytest>=8.3,<9.0
+# Testing — pytest 8.4.2 installed and verified on 2026-10-29.
+pytest==8.4.2
 
 # ---------------------------------------------------------------------------
 # Phase 6 (model integration) — intentionally not listed yet.

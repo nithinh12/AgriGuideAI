@@ -33,13 +33,14 @@
 | Module | Responsibility | Status |
 |---|---|---|
 | `src/config.py` | Env-driven settings, deterministic defaults, token masking | implemented |
-| `src/document_loader.py` | Load PDFs/TXT from `data/raw/`, extract text via pypdf, attach provenance from `sources.jsonl` | planned (Phase 5) |
-| `src/text_chunker.py` | Clean/normalize text; split into overlapping chunks that keep sentence/number integrity | planned (Phase 5) |
-| `src/embeddings.py` | Wrap multilingual-e5-small with the mandatory `query:`/`passage:` prefixes; batch encode on CPU | planned (Phase 5) |
-| `src/retriever.py` | Build/load FAISS index; top-k search with a minimum-score gate (enables honest abstention) | planned (Phase 5) |
+| `src/document_loader.py` | Load PDFs/TXT from `data/raw/`, extract text via pypdf, attach provenance from `sources.jsonl` | implemented (Phase 5) |
+| `src/text_chunker.py` | Clean/normalize text; sentence-aware word windows with overlap; page numbers preserved for citation | implemented (Phase 5) |
+| `src/embeddings.py` | Wrap multilingual-e5-small with the mandatory `query:`/`passage:` prefixes; batch encode on CPU | implemented (Phase 5) |
+| `src/retriever.py` | Build/load FAISS index; top-k search with a minimum-score gate (enables honest abstention) | implemented (Phase 5) |
+| `src/build_index.py` | CLI: load → chunk → embed → FAISS + manifests (`python -m src.build_index`) | implemented (Phase 5) |
 | `src/translator.py` | en⇄hi and en⇄kn via IndicTrans2 dist-200M; Windows preprocessing shim; terminology/number checks | planned (Phase 6) |
 | `src/llm_service.py` | AgriParam loading (CPU bf16, `trust_remote_code`), prompt building, generation, timeouts, failure fallbacks | planned (Phase 6) |
-| `src/rag_pipeline.py` | Orchestrate 1–7; produce a structured result object (answer, sources, flags) | planned (Phase 6) |
+| `src/rag_pipeline.py` | Orchestrate 1–7; structured result (answer, sources, flags); pluggable generator (extractive stub now, AgriParam later) | implemented (Phase 5) |
 | `src/source_formatter.py` | Render source cards (title, org, URL, excerpt); distinguish retrieved facts from generated text | planned (Phase 7) |
 | `app/streamlit_app.py` | Trilingual UI | planned (Phase 7) |
 

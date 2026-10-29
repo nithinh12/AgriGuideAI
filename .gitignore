@@ -22,10 +22,11 @@ models/
 .huggingface/
 .cache/
 
-# Data: raw documents and derived artifacts stay machine-local.
-# Provenance metadata (sources.jsonl) IS committed (see data/README.md).
+# Data: raw documents and derived artifacts are machine-local.
+# Provenance metadata (sources.jsonl) IS committed — see data/README.md.
 data/raw/*
 !data/raw/.gitkeep
+!data/raw/sources.jsonl
 data/processed/*
 !data/processed/.gitkeep
 
