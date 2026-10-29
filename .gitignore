@@ -1,0 +1,49 @@
+# Virtual environment
+.venv/
+venv/
+
+# Python caches
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Secrets / local config — never commit
+.env
+
+# Model weights and Hugging Face cache — never commit large binaries
+models/
+*.gguf
+*.safetensors
+*.pt
+*.ckpt
+.huggingface/
+.cache/
+
+# Data: raw documents and derived artifacts stay machine-local.
+# Provenance metadata (sources.jsonl) IS committed (see data/README.md).
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Vector indexes
+*.index
+*.faiss
+
+# Evaluation outputs (test cases and methodology ARE committed;
+# generated run outputs are not)
+evaluation/results/*
+!evaluation/results/.gitkeep
+
+# Logs
+*.log
+logs/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
