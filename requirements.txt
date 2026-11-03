@@ -1,5 +1,5 @@
 # AgriGuide AI — dependency set
-# Verified against D:\AgriGuideAI\.venv (Python 3.10.11) on 2026-10-29.
+# Verified against the project's production .venv (Python 3.10.11) on 2026-10-29.
 #
 # NOTE: the installed torch is the CPU build (2.14.1+cpu). The RTX 3050 (4 GB)
 # is intentionally unused for model inference (see docs/model_selection.md).
@@ -23,7 +23,13 @@ huggingface_hub==2.3.0
 pytest==8.4.2
 
 # ---------------------------------------------------------------------------
-# Phase 6 (model integration) — intentionally not listed yet.
-# IndicTrans2 needs IndicTransToolkit (Cython build); it is officially
-# Linux/macOS only and no MSVC build tools exist on this machine.
-# Decision + fallback ladder: docs/model_selection.md
+# Phase 6 — IndicTrans2 translation stack (installed + verified 2026-10-29).
+# The official IndicTransToolkit (Cython) cannot be built on Windows (no MSVC
+# compiler); src/indic_processor.py is a pure-Python port, compared against the
+# official build in WSL2 (tests/differential/): all outputs matched; one error
+# message differed in wording only (same exception type). Below are its runtime deps:
+sentencepiece==0.2.2
+sacremoses==0.2.0
+indic-nlp-library-itt==0.1.1
+nltk==3.10.4
+regex==2026.9.29

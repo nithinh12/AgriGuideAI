@@ -1,0 +1,17 @@
+# Visual theme for the AgriGuide AI Streamlit app (presentation only).
+[theme]
+base = "light"
+primaryColor = "#237a50"
+backgroundColor = "#f7f5ef"
+secondaryBackgroundColor = "#eef3ea"
+textColor = "#1f2a24"
+font = "sans serif"
+
+[client]
+toolbarMode = "minimal"
+
+[server]
+# Streamlit's source watcher imports every lazily-loaded `transformers` submodule
+# to look for changes; many need torchvision (not installed), which floods the log
+# with tracebacks and delays the first page load. Auto-reload is only a dev aid.
+fileWatcherType = "none"

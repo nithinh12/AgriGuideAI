@@ -53,6 +53,11 @@ class Settings:
             "EMBEDDING_MODEL", "intfloat/multilingual-e5-small"
         )
     )
+    # NOTE (2026-11-01): AgriParam was evaluated and NOT integrated. llm_model,
+    # llm_dtype and llm_max_new_tokens are read by no code path (they only
+    # appear in masked()); the AgriParam default is a leftover placeholder.
+    # llm_device IS used: src/build_index.py passes it as the embedding device,
+    # so do not rename or remove it. Defaults are unchanged on purpose.
     llm_model: str = field(
         default_factory=lambda: os.getenv("LLM_MODEL", "bharatgenai/AgriParam")
     )

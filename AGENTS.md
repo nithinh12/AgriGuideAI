@@ -17,7 +17,7 @@ Academic mini-project (CS3235 CIE3). Deadline: **2026-11-06 10:00 AM**.
 4. **Respect the machine.** CPU-first (16 GB RAM; RTX 3050 has only 4 GB VRAM
    and is not used for inference). Do not download large checkpoints before
    compatibility/licensing checks are documented in `docs/model_selection.md`.
-5. **Stay inside** `D:\AgriGuideAI` unless explicitly authorized otherwise.
+5. **Stay inside the project working directory** unless explicitly authorized otherwise.
 6. **Inspect before you overwrite.** Preserve any existing user work.
 7. **Ask before** destructive operations, major environment changes, paid API
    calls, or unexpected large downloads.

@@ -1,5 +1,6 @@
 # Virtual environment
 .venv/
+.venv-indic-test/
 venv/
 
 # Python caches
@@ -48,3 +49,35 @@ logs/
 Thumbs.db
 .vscode/
 .idea/
+
+# Duplicate report PDF — keep only the compressed version
+AgriGuideAI_Rubric_Aligned_Technical_Report.pdf
+
+# Superseded procedural background generators and the images they produced
+assets/generate_hero_background.py
+assets/generate_landscape_background.py
+assets/hero_bg_desktop.webp
+assets/hero_bg_mobile.webp
+assets/landscape_bg_desktop.webp
+assets/landscape_bg_mobile.webp
+
+# Development/tuning artifacts — intermediate retrieval-eval iterations
+artifacts/retrieval_relevance_eval_*.jsonl
+artifacts/streamlit_phase2c_*.log
+
+# IndicTrans2 diagnostic logs
+artifacts/indictrans2_*.txt
+
+# Development scratch directories — backups and remediation working files
+artifacts/backups/
+artifacts/remediation_20261101/
+
+# UI development screenshots — keep only the final viewport shots
+# (artifacts/ui_redesign_20261102/photo_background/viewport/ is kept)
+artifacts/ui_redesign_20261102/hero_background/
+artifacts/ui_redesign_20261102/page_background/
+artifacts/ui_redesign_20261102/screenshots/
+artifacts/ui_redesign_20261102/photo_background/full_page/
+artifacts/ui_redesign_20261102/ui_drive.py
+
+AgriGuideAI_Report_Compressed.pdf

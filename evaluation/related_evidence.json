@@ -1,0 +1,42 @@
+{
+  "irrig_03": [
+    {
+      "doc_id": "tnau_agriculture",
+      "pages": [185],
+      "role": "related",
+      "note": "Soybean climate requirement on p185 says soybean 'can withstand short periods of waterlogging and short drought'. The gold passage on p186 says soybean is 'very sensitive to excess moisture and the crop is affected, if water stagnates in the fields'. The two passages are not interchangeable and are not merged; p186 stays the only exact evidence."
+    }
+  ],
+  "fert_01": [
+    {
+      "doc_id": "tnau_agriculture",
+      "pages": [197, 208],
+      "role": "related",
+      "note": "Other groundnut gypsum statements with the same 400 kg/ha rate but different timing wording: p197 'Gypsum 400 kg/ha as soil application at 45th day after sowing' (sulphur deficiency), p208 'Apply gypsum @ 400 kg / ha at peg formation stage and at earthing'. Unresolved source-reference nuance; p203 stays the primary evidence and the recommendations are not merged."
+    }
+  ],
+  "fert_01_alt": [
+    {
+      "doc_id": "tnau_agriculture",
+      "pages": [197, 208],
+      "role": "related",
+      "note": "Same related groundnut gypsum passages as fert_01 (p197, p208); not counted as exact evidence."
+    }
+  ],
+  "drone_01": [
+    {
+      "doc_id": "tn_crop_sop_2023",
+      "pages": [19],
+      "role": "duplicate_text_layer",
+      "note": "Rendered PDF page 18 (printed page 7) carries the 'Do not spray if there is forecast of heavy rains in next 1-2 days' guideline. Rendered PDF page 19 (printed page 8) shows only the Ready-Reckoner table, but its extracted text layer repeats page 18's text, so the index holds an identical chunk for page 19. Page 19 is accepted as a text-layer duplicate, not as an independent source."
+    }
+  ],
+  "unsup_adjacent_01": [
+    {
+      "doc_id": "tn_crop_sop_2023",
+      "pages": [18, 19],
+      "role": "forbidden",
+      "note": "The SOP states 'Minimum interval between application of chemical insecticide and harvest of maize corn should be 30 days.' This is maize-specific and must not be used to answer the rice / chlorantraniliprole question. Any citation of it on this case is recorded as forbidden evidence."
+    }
+  ]
+}

@@ -1,0 +1,194 @@
+{
+ "impl": "shim",
+ "processor_class": "src.indic_processor.IndicProcessor",
+ "import_method": "shim_src.indic_processor",
+ "pythonhashseed": "0",
+ "versions": {
+  "python": "3.10.11",
+  "platform": "Windows-10-10.0.26300-SP0",
+  "regex": "2026.9.29",
+  "sacremoses": "0.2.0",
+  "indic-nlp-library-itt": "0.1.1",
+  "transformers": "5.20.2",
+  "sentencepiece": "0.2.2",
+  "tqdm": "4.70.1"
+ },
+ "scenarios": {
+  "en_to_hi": [
+   {
+    "op": "preprocess",
+    "output": [
+     "eng_Latn hin_Deva Apply 150 kg / ha nitrogen to wheat < ID1 > days after sowing .",
+     "eng_Latn hin_Deva Spray 25 % neem oil solution on cotton bollworm .",
+     "eng_Latn hin_Deva Sowing depth of 1.5 cm is ideal for maize .",
+     "eng_Latn hin_Deva Contact < ID1 > for pest advice .",
+     "eng_Latn hin_Deva Visit < ID1 > for the SOP .",
+     "eng_Latn hin_Deva ",
+     "eng_Latn hin_Deva Yield increased by 1,200 kg in 2022 .",
+     "eng_Latn hin_Deva Mix 5 % Captan fungicide before storage ."
+    ]
+   },
+   {
+    "op": "postprocess",
+    "output": [
+     "गेहूँ में 50-60 दिनों के बाद यूरिया डालें।",
+     "नीम तेल का छिड़काव कपास में करें।",
+     "मक्के के लिए बुवाई की गहराई उपयुक्त है।",
+     "कीट सलाह के लिए agronomist@example.com को संपर्क करें।",
+     "एसएईपी के लिए https://kar.ap.gov.in/crops पर जाएँ।",
+     "",
+     "उपज 1,200 किग्रा बढ़ी।",
+     "भंडारण से पहले कपास में छिड़ाव करें।"
+    ]
+   }
+  ],
+  "en_to_kn": [
+   {
+    "op": "preprocess",
+    "output": [
+     "eng_Latn kan_Knda Apply 150 kg / ha nitrogen to wheat < ID1 > days after sowing .",
+     "eng_Latn kan_Knda Spray 25 % neem oil solution on cotton bollworm .",
+     "eng_Latn kan_Knda Sowing depth of 1.5 cm is ideal for maize .",
+     "eng_Latn kan_Knda Contact < ID1 > for pest advice .",
+     "eng_Latn kan_Knda Visit < ID1 > for the SOP .",
+     "eng_Latn kan_Knda ",
+     "eng_Latn kan_Knda Yield increased by 1,200 kg in 2022 .",
+     "eng_Latn kan_Knda Mix 5 % Captan fungicide before storage ."
+    ]
+   },
+   {
+    "op": "postprocess",
+    "output": [
+     "ಬಿತ್ತನೆಯ 50-60 ದಿನಗಳ ನಂತರ ಗೋಬ್ಬರ ಹಾಕಿ।",
+     "ಕಬ್ಬಿಗೆ ನೀಮ ತೇಲ ಸಿಂಪಡಿಸಿ।",
+     "ಮೆಕ್ಕಜೊಳ ಬಿತ್ತನೆ ಆಳತೆ ಸರಿಯಾಗಿದೆ।",
+     "ಸಂಪರ್ಕೆ ಯಾಗಿನ agronomist@example.com ಗೆ ಸಂಪರ್ಕಿಸಿ।",
+     "ಸೊಪಿ ಉಳ್ಳಿ ಲಾ೑ https://kar.ap.gov.in/crops ಹರಿ।",
+     "",
+     "ಸಸ್ತುವಾರಿ 1,200 ಕಿಗ್ರಾ ಹೆુಯಾಗಿದೆ।",
+     "ದಾಸ್ತಾನುಗೂ ಮುನ್ತನ ದಾಸ್ತಾನು ದ್ರાವಣ ತಯಾರಿಸಿ।"
+    ]
+   }
+  ],
+  "hi_to_en": [
+   {
+    "op": "preprocess",
+    "output": [
+     "hin_Deva eng_Latn गेहूँ में 150 किग्रा यूरिया < ID1 > दिनों में डालें ।",
+     "hin_Deva eng_Latn कपास में ॢ5 नीम तेल का छिड़ाव करें ।",
+     "hin_Deva eng_Latn बुवाई की गहराई 15 सेमी होनी चाहिए ।",
+     "hin_Deva eng_Latn सलाह के लिए < ID1 > को ईमेल करें ।",
+     "hin_Deva eng_Latn < ID1 > पर जाएँ ।",
+     "hin_Deva eng_Latn ",
+     "hin_Deva eng_Latn उपज 1,200 किग्रा बढ़ी ।",
+     "hin_Deva eng_Latn भंडारण से पहले 5 घोल बनाएँ ।"
+    ]
+   },
+   {
+    "op": "postprocess",
+    "output": [
+     "Apply 50-60 kg urea to wheat.",
+     "Spray neem oil solution on cotton.",
+     "Sowing depth should be 15 cm.",
+     "Email agronomist@example.com for advice.",
+     "Visit https://kar.ap.gov.in online.",
+     "",
+     "Yield increased by 1,200 kg.",
+     "Prepare 5% solution before storage."
+    ]
+   }
+  ],
+  "kn_to_en": [
+   {
+    "op": "preprocess",
+    "output": [
+     "kan_Knda eng_Latn बित्तनॆय < ID1 > दिनगळल्लि नीरिडુबॆকु ।",
+     "kan_Knda eng_Latn 100 किग्रा गोब्बर हाकि ।",
+     "kan_Knda eng_Latn 25 द्रાवण सिंपडिसि ।",
+     "kan_Knda eng_Latn सलहॆगागिन < ID1 > गॆ ईमेल્ माडि ।",
+     "kan_Knda eng_Latn < ID1 > अन्नु निरीकिસि ।",
+     "kan_Knda eng_Latn ",
+     "kan_Knda eng_Latn सस्तुवारि 1,044 किग्रा हॆુयागितु ।",
+     "kan_Knda eng_Latn दास्तानुगू मुन्तन 25 द्रાवण तयारिसि ।"
+    ]
+   },
+   {
+    "op": "postprocess",
+    "output": [
+     "Irrigate 50-60 days after sowing.",
+     "Apply 150 kg urea per hectare.",
+     "Spray 25% solution.",
+     "Email agronomist@example.com for advice.",
+     "Visit https://kar.ap.gov.in online.",
+     "",
+     "Yield increased by 1,200 kg.",
+     "Prepare 5% solution before storage."
+    ]
+   }
+  ],
+  "edge_and_errors": [
+   {
+    "op": "preprocess",
+    "output": []
+   },
+   {
+    "op": "postprocess",
+    "output": []
+   },
+   {
+    "op": "preprocess",
+    "output": [
+     "eng_Latn None Hello world ."
+    ]
+   },
+   {
+    "op": "preprocess",
+    "output": [
+     "Quoted \" Wheat \" - irrigate at tillering ..."
+    ]
+   },
+   {
+    "op": "preprocess",
+    "output": [
+     "hin_Deva eng_Latn गेहूँ की उपज 1,200 किग्रा बढ़ी ।"
+    ]
+   },
+   {
+    "op": "postprocess",
+    "error_type": "ValueError",
+    "error_msg": "not enough values to unpack (expected 2, got 1)",
+    "error": "ValueError: not enough values to unpack (expected 2, got 1)"
+   },
+   {
+    "op": "note",
+    "comment": "malformed src_lang without underscore excluded from shared cases: official Cython processor SIGSEGVs on preprocess_batch with a language code lacking \"_\" (verified 2026-10-29, WSL2); shim raises IndexError (asserted in tests/test_indic_processor.py)"
+   },
+   {
+    "op": "preprocess",
+    "error_type": "TypeError",
+    "error_msg": "a bytes-like object is required, not 'NoneType'",
+    "error": "TypeError: a bytes-like object is required, not 'NoneType'"
+   },
+   {
+    "op": "postprocess",
+    "output": [
+     "Alpha",
+     "Beta"
+    ]
+   },
+   {
+    "op": "preprocess",
+    "output": [
+     "eng_Latn hin_Deva Nitrogen dose < ID1 > kg / ha ."
+    ]
+   },
+   {
+    "op": "postprocess",
+    "output": [
+     "Nitrogen dose 50-60 kg/ha.",
+     "Nitrogen dose 50-60 kg/ha also."
+    ]
+   }
+  ]
+ }
+}
